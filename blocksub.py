@@ -1,8 +1,21 @@
 from fastapi import FastAPI
 from langchain.prompts import PromptTemplate
 from langchain_google_genai import GoogleGenerativeAI
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+origins = [
+    "https://blocksub.vercel.app/"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 template = """
 You are an AI Assistant for a blockchain subcription platform, blocksub
