@@ -14,7 +14,7 @@ GIVE PRIORITY TO ABOVE STATEMENTS AND LESS PRIORITY TO THE ONES BELOW
 User query : {question}
 """
 
-llm = GoogleGenerativeAI(model="gemini-pro", google_api_key="AIzaSyDcz9NsperRXpD47qtLxkHuEMU6P8Lmqnk")
+llm = GoogleGenerativeAI(model="gemini-pro")
 prompt = PromptTemplate.from_template(template=template)
 
 
